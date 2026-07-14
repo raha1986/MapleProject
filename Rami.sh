@@ -1,4 +1,7 @@
 #!/bin/bash
+set -x
+trap 'echo "❌ ERROR at line $LINENO"' ERR
+
 set -euo pipefail
 
 # ============================
@@ -103,9 +106,12 @@ TROJAN_PASS3=$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 24)
 SS_PASS3=$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 24)
 
 # Reality keys (Microsoft domain)
-REALITY_KEYS=$(xray x25519)
+XRAY_BIN=$(command -v xray || echo "/usr/local/bin/xray")
+
+REALITY_KEYS=$($XRAY_BIN x25519)
 REALITY_PRIVATE=$(echo "$REALITY_KEYS" | awk '/Private/{print $3}')
 REALITY_PUBLIC=$(echo "$REALITY_KEYS" | awk '/Public/{print $3}')
+
 REALITY_SHORTID=$(openssl rand -hex 4)
 REALITY_DEST="login.microsoftonline.com:443"
 REALITY_SNI="login.microsoftonline.com"
