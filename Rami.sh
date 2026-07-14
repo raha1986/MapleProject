@@ -102,7 +102,7 @@ SS_PASS2=$(openssl rand -hex 16)
 
 VLESS_UUID3=$(uuid)
 VMESS_UUID3=$(uuid)
-TROJAN_PASS3$(openssl rand -hex 16)
+TROJAN_PASS3=$(openssl rand -hex 16)
 SS_PASS3=$(openssl rand -hex 16)
 
 # Reality keys (Auto-Fix)
