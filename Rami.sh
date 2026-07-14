@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "V3"
+echo "V4"
 set -x
 trap 'echo "❌❌❌ ERROR at line $LINENO"' ERR
 
