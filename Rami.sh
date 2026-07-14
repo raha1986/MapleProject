@@ -105,12 +105,22 @@ VMESS_UUID3=$(uuid)
 TROJAN_PASS3=$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 24)
 SS_PASS3=$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 24)
 
-# Reality keys (Microsoft domain)
+# Reality keys (Auto-Fix)
 XRAY_BIN=$(command -v xray || echo "/usr/local/bin/xray")
 
-REALITY_KEYS=$($XRAY_BIN x25519)
-REALITY_PRIVATE=$(echo "$REALITY_KEYS" | awk '/Private/{print $3}')
-REALITY_PUBLIC=$(echo "$REALITY_KEYS" | awk '/Public/{print $3}')
+# Try generating real Reality keys
+REALITY_KEYS=""
+if $XRAY_BIN x25519 >/dev/null 2>&1; then
+    echo "✔ Reality key generation supported"
+    REALITY_KEYS=$($XRAY_BIN x25519)
+    REALITY_PRIVATE=$(echo "$REALITY_KEYS" | awk '/Private/{print $3}')
+    REALITY_PUBLIC=$(echo "$REALITY_KEYS" | awk '/Public/{print $3}')
+else
+    echo "⚠ Reality key generation NOT supported — using fallback keys"
+    # Fallback keys (valid format, but not secure — works for config generation)
+    REALITY_PRIVATE="1111111111111111111111111111111111111111111"
+    REALITY_PUBLIC="2222222222222222222222222222222222222222222"
+fi
 
 REALITY_SHORTID=$(openssl rand -hex 4)
 REALITY_DEST="login.microsoftonline.com:443"
