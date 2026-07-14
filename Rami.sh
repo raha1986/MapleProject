@@ -95,7 +95,7 @@ VMESS_UUID=$(uuid)
 echo "Create SS_PASS ❌❌❌❌❌❌"
 SS_PASS=$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 24)
 echo "Create TROJAN_PASS ❌❌❌❌❌❌"
-TROJAN_PASS=$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 24)
+TROJAN_PASS=$(openssl rand -hex 16)
 
 VLESS_UUID2=$(uuid)
 VMESS_UUID2=$(uuid)
