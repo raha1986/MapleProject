@@ -1,6 +1,6 @@
 #!/bin/bash
 set -x
-trap 'echo "❌❌❌ ERROR at line $LINENO"' ERR
+trap 'echo "❌ ERROR at line $LINENO"' ERR
 
 set -euo pipefail
 
@@ -93,7 +93,7 @@ uuid() { cat /proc/sys/kernel/random/uuid; }
 VLESS_UUID=$(uuid)
 VMESS_UUID=$(uuid)
 echo "Create SS_PASS ❌❌❌❌❌❌"
-SS_PASS=$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 24)
+SS_PASS=$(openssl rand -hex 16)
 echo "Create TROJAN_PASS ❌❌❌❌❌❌"
 TROJAN_PASS=$(openssl rand -hex 16)
 
