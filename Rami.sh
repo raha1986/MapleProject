@@ -3,7 +3,7 @@ set -x
 trap 'echo "❌ ERROR at line $LINENO"' ERR
 
 set -euo pipefail
-
+echo "V3"
 # ============================
 #   Ramtin 19-Protocol Builder
 # ============================
