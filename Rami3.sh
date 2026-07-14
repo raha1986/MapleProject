@@ -1,6 +1,6 @@
 #!/bin/bash
 set -x
-trap 'echo "❌❌❌ ERROR at line $LINENO"' ERR
+trap 'echo "❌ ERROR at line $LINENO"' ERR
 
 set -euo pipefail
 
@@ -92,20 +92,18 @@ uuid() { cat /proc/sys/kernel/random/uuid; }
 
 VLESS_UUID=$(uuid)
 VMESS_UUID=$(uuid)
-echo "Create SS_PASS ❌❌❌❌❌❌"
-SS_PASS=$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 24)
-echo "Create TROJAN_PASS ❌❌❌❌❌❌"
+SS_PASS=$(openssl rand -hex 16)
 TROJAN_PASS=$(openssl rand -hex 16)
 
 VLESS_UUID2=$(uuid)
 VMESS_UUID2=$(uuid)
-TROJAN_PASS2=$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 24)
-SS_PASS2=$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 24)
+TROJAN_PASS2=$(openssl rand -hex 16)
+SS_PASS2=$(openssl rand -hex 16)
 
 VLESS_UUID3=$(uuid)
 VMESS_UUID3=$(uuid)
-TROJAN_PASS3=$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 24)
-SS_PASS3=$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 24)
+TROJAN_PASS3=$(openssl rand -hex 16)
+SS_PASS3=$(openssl rand -hex 16)
 
 # Reality keys (Auto-Fix)
 XRAY_BIN=$(command -v xray || echo "/usr/local/bin/xray")
