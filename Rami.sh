@@ -96,8 +96,8 @@ uuid() { cat /proc/sys/kernel/random/uuid; }
 
 VLESS_UUID=$(uuid)
 VMESS_UUID=$(uuid)
-TROJAN_PASS=$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 24)
 SS_PASS=$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 24)
+TROJAN_PASS=$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 24)
 
 VLESS_UUID2=$(uuid)
 VMESS_UUID2=$(uuid)
