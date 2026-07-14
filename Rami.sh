@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "V3"
 set -x
-trap 'echo "❌ ERROR at line $LINENO"' ERR
+trap 'echo "❌❌❌ ERROR at line $LINENO"' ERR
 
 set -euo pipefail
 
