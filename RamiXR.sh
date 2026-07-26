@@ -1,6 +1,6 @@
 #!/bin/bash
 # ============================================
-# EZxray - MAXIMUM EDITION
+# RamiXR - MAXIMUM EDITION
 # ============================================
 
 # Colors
@@ -56,20 +56,20 @@ clear
 
 # Banner
 echo -e "${PURPLE}${BOLD}"
-echo "╔═══════════════════════════════════════════════════════════════╗"
-echo "║                                                               ║"
+echo "╔═════════════════════════════════════════════════════════════╗"
+echo "║                                                             ║"
 echo "║     ██╗░░██╗██████╗░░█████╗░██╗░░░██╗                       ║"
 echo "║     ╚██╗██╔╝██╔══██╗██╔══██╗╚██╗░██╔╝                       ║"
 echo "║     ░╚███╔╝░██████╔╝███████║░╚████╔╝░                       ║"
 echo "║     ░██╔██╗░██╔══██╗██╔══██║░░╚██╔╝░░                       ║"
 echo "║     ██╔╝╚██╗██║░░██║██║░░██║░░░██║░░░                       ║"
 echo "║     ╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝░░░╚═╝░░░                       ║"
-echo "║                                                               ║"
-echo "║        🔥 				EZxray - MAXIMUM 🔥              ║"
-echo "║        12 PROTOCOLS × 20 PORTS - COMPLETE EDITION            ║"
+echo "║                                                             ║"
+echo "║        🔥 				RamiXR  🔥                          ║"
+echo "║        12 PROTOCOLS × 20 PORTS - COMPLETE EDITION           ║"
 echo "║              Version 1.0.0 - MEGA ULTRA                     ║"
-echo "║                                                               ║"
-echo "╚═══════════════════════════════════════════════════════════════╝"
+echo "║                                                             ║"
+echo "╚═════════════════════════════════════════════════════════════╝"
 echo -e "${NC}"
 
 matrix_effect
@@ -94,7 +94,7 @@ else
     CLIP_CMD="cat"
 fi
 
-echo -e "${CYAN}${BOLD}🤖 EZxray FEATURES ACTIVATED:${NC}"
+echo -e "${CYAN}${BOLD}🤖 RamiXR FEATURES ACTIVATED:${NC}"
 echo -e "${GREEN}  ✓ 12 Different Protocols"
 echo -e "${GREEN}  ✓ 20 Available Ports"
 echo -e "${GREEN}  ✓ AI-Optimized Selection"
@@ -219,7 +219,7 @@ fi
 # ============================================
 # GENERATE CONFIG WITH ALL PROTOCOLS
 # ============================================
-loading_animation "⚙️ Generating EZxray configuration with 12 protocols"
+loading_animation "⚙️ Generating RamiXR configuration with 12 protocols"
 mkdir -p /usr/local/xray
 
 cat > /usr/local/xray/config.json <<EOF
@@ -662,7 +662,7 @@ Check All Ports:
 netstat -tulpn | grep xray
 
 ═══════════════════════════════════════════════════════════════════════════
-⭐ EZxray FEATURES
+⭐ RamiXR FEATURES
 ═══════════════════════════════════════════════════════════════════════════
 ✓ 12 Active Protocols (VLESS, VMESS, Trojan, Shadowsocks × 3 each)
 ✓ 20 Available Ports (Smart Selection)
@@ -685,4 +685,4 @@ echo -e "${PURPLE}${BOLD}🎉 SUCCESS! 12 PROTOCOLS ARE READY! 🎉${NC}"
 echo -e "${GREEN}${BOLD}═══════════════════════════════════════════════════════════════${NC}"
 
 matrix_effect
-echo -e "${BLINK}${YELLOW}🔥 ${BOLD}12 Protocols × 20 Ports - EZxray XRAY Mega Edition 2026 🔥${NC}\n"
+echo -e "${BLINK}${YELLOW}🔥 ${BOLD}12 Protocols × 20 Ports - RamiXR XRAY Mega Edition 2026 🔥${NC}\n"
